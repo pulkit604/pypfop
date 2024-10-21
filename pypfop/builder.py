@@ -75,7 +75,8 @@ class SubprocessBuilder(Builder):
         proc = subprocess.Popen(cmdargs,
                                 stdin=subprocess.PIPE,
                                 stdout=subprocess.PIPE,
-                                stderr=subprocess.PIPE)
+                                stderr=subprocess.PIPE,
+                               shell=True)
         _, stderr = proc.communicate(xslfo)
         stderr = stderr.decode()
         log.debug('STDERR of fop command: {}'.format(stderr))
