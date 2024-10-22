@@ -72,7 +72,8 @@ class SubprocessBuilder(Builder):
         cmdargs = [self.fop_cmd, ] + self.fop_cmd_extra_args
         cmdargs += ['-q', '-fo', '-', '-{}'.format(out_format), ofilepath]
         log.debug('cmdline {}'.format(cmdargs))
-        print(cmdargs, os.getcwd())
+        print(os.listdir("/app/vendors/fop-2.6/fop/"))
+        print([f for f in os.listdir("/app/vendors/fop-2.6/fop/")])
         proc = subprocess.Popen(cmdargs,
                                 stdin=subprocess.PIPE,
                                 stdout=subprocess.PIPE,
