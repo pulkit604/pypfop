@@ -72,6 +72,7 @@ class SubprocessBuilder(Builder):
         cmdargs = [self.fop_cmd, ] + self.fop_cmd_extra_args
         cmdargs += ['-q', '-fo', '-', '-{}'.format(out_format), ofilepath]
         log.debug('cmdline {}'.format(cmdargs))
+        print(cmdargs, os.getcwd())
         proc = subprocess.Popen(cmdargs,
                                 stdin=subprocess.PIPE,
                                 stdout=subprocess.PIPE,
